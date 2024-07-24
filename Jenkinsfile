@@ -4,8 +4,10 @@ pipeline {
         maven 'maven3.9'
     }
     stages {
-        steps('Build') {
-            sh 'mvn -B -DskipTests clean package'
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
         }
     }
 }
